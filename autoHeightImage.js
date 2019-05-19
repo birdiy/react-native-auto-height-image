@@ -4,19 +4,15 @@
  */
 
 import React, { PureComponent } from 'react';
-import Image from 'react-native-android-image-polyfill';
+import { Image } from 'react-native-elements';
 import { StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
 import { getImageSizeFitWidth, getImageSizeFitWidthFromCache } from './cache';
 import { NOOP, DEFAULT_HEIGHT } from './helpers';
 
-// remove `resizeMode` props from `Image.propTypes`
-const { resizeMode, ...ImagePropTypes } = Image.propTypes;
-
 export default class AutoHeightImage extends PureComponent {
   static propTypes = {
-    ...ImagePropTypes,
     width: PropTypes.number.isRequired,
     onHeightChange: PropTypes.func
   };
